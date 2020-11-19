@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title><%- padId %></title>
+<meta name="generator" content="Etherpad">
+<meta name="author" content="Etherpad">
+<meta name="changedby" content="Etherpad">
+<meta charset="utf-8">
+<style>
+ol {
+  counter-reset: item;
+}
+
+ol > li {
+  counter-increment: item;
+}
+
+ol ol > li {
+  display: block;
+}
+
+ol > li {
+  display: block;
+}
+
+ol > li:before {
+  content: counters(item, ".") ". ";
+}
+
+ol ol > li:before {
+  content: counters(item, ".") ". ";
+  margin-left: -20px;
+}
+<%- extraCSS %>
+</style>
+</head>
+<body>
+<%- body %>
+</body>
+</html>
